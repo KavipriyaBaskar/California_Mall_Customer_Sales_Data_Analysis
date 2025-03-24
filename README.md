@@ -59,7 +59,65 @@ The **shopping_mall_data.xlsx** file provides details about various malls in Cal
 This document explains the process of importing, cleaning, and transforming the **California Mall Customers Sales Data** into **MySQL** for better data integrity and analysis. The data consists of three datasets: **Customer Data**, **Sales Data**, and **Shopping Mall Data**.
 
 ---
+# **Process of Importing Dataset into MySQL**  
 
+The process of importing datasets into **MySQL** involves several sequential steps to ensure the data is properly loaded, cleaned, and transformed for analysis. Here’s a detailed breakdown of the entire process:  
+
+---
+
+## **1. Preparation of the Datasets**  
+Before importing, ensure that the datasets are properly structured and free from basic formatting issues. Common checks include:  
+- **File Format:** Ensure files are in a compatible format like **CSV**, **Excel**, or **SQL dump**.  
+- **Consistent Column Names:** Make sure column names are standardized across related tables.  
+- **No Special Characters:** Remove or encode special characters in text fields.  
+- **Date and Number Formats:** Ensure dates follow a uniform format (e.g., **YYYY-MM-DD**) and numeric values do not contain commas.  
+
+---
+
+## **2. Setting Up the MySQL Database**  
+Create a dedicated database to store the imported datasets. This helps organize tables logically.  
+
+```sql
+CREATE DATABASE california_mall;
+USE california_mall;
+Creating Tables in MySQL
+Design the structure of tables based on the dataset schema. Define appropriate data types and constraints (e.g., PRIMARY KEY, NOT NULL, FOREIGN KEY).
+
+Example – Creating a Customers Table:
+sql
+Copy
+Edit
+CREATE TABLE customers (
+    customer_id VARCHAR(20) PRIMARY KEY,
+    gender ENUM('Male', 'Female') NOT NULL,
+    age INT CHECK (age >= 0),
+    payment_method VARCHAR(50)
+);
+Define Primary Key: To uniquely identify records.
+
+Set Data Constraints: To avoid invalid entries (e.g., CHECK constraints on age).
+
+Set Data Types: INT for numbers, VARCHAR for text, DATE for dates.
+4. Importing Data into MySQL Tables
+Use MySQL Workbench or SQL Queries to import data from external files.
+
+Method 1: Using MySQL Workbench
+Right-click on the table and select "Table Data Import Wizard."
+
+Browse and select the CSV or Excel file.
+
+Map Columns to ensure data aligns with the table structure.
+
+Execute the import process.
+
+Finalizing the Import Process
+After resolving import issues:
+
+Ensure all tables are properly linked through Foreign Keys.
+
+Backup the cleaned and final dataset for future use.
+
+Export cleaned datasets if needed for further analysis in Power BI or other tools.
 ## **Data Cleaning and Transformation Process**
 
 ### **Cleaning Steps:**
