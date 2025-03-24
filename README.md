@@ -1,4 +1,4 @@
-# **CALIFORNIA MALL CUSTOMERS SALES DATA ANALYSIS**
+# **CALIFORNIA MALL CUSTOMERS SALES DATA ANALYSIS using MySQL and PowerBI**
 
 ## **Objectives of the Analysis:**
 
@@ -53,6 +53,130 @@ The **shopping_mall_data.xlsx** file provides details about various malls in Cal
 | `store_count`          | Number of stores in the mall.                     | *Integer*     | 140, 200, 270                 |
 
 ---
+
+# **Importing and Cleaning California Mall Customers Sales Data Using MySQL**
+
+This document explains the process of importing, cleaning, and transforming the **California Mall Customers Sales Data** into **MySQL** for better data integrity and analysis. The data consists of three datasets: **Customer Data**, **Sales Data**, and **Shopping Mall Data**.
+
+---
+
+## **1. Importing Data into MySQL**
+
+2. Data Cleaning Process
+Step 1: Handle Missing Values
+sql
+Copy
+Edit
+-- Replace NULL ages with the average age
+UPDATE customers
+SET age = (SELECT AVG(age) FROM customers)
+WHERE age IS NULL;
+
+-- Replace NULL payment methods with 'Unknown'
+UPDATE customers
+SET payment_method = 'Unknown'
+WHERE payment_method IS NULL;
+
+# **Data Cleaning and Transformation Process with Visualization**  
+### **California Mall Customers Sales Data Analysis**
+
+This document outlines the step-by-step process of **Data Cleaning** and **Transformation** using **MySQL**, supported by visualizations that highlight key metrics and insights.
+
+---
+
+## **1. Overview of the Dataset**  
+![Overview](Resources/Overview.png)  
+
+- The dataset consists of three tables: **Customers**, **Sales**, and **Shopping Malls**.  
+- Contains information about customer demographics, purchase transactions, and mall characteristics.  
+- Essential for understanding the relationship between customer behavior and sales performance.
+
+---
+
+## **2. Contribution of Customers**  
+![Contribution of Customers](Resources/Contribution%20of%20Customers.png)  
+
+- This analysis identifies how different demographics (age, gender, and payment methods) contribute to overall sales.  
+- **Key Insights:**  
+  - **Gender:** Male and female customers show nearly equal participation.  
+  - **Age Groups:** Middle-aged groups contribute the most.  
+  - **Payment Method:** Credit cards dominate the payment landscape.
+
+---
+
+## **3. Shopping Mall Analysis**  
+![Shopping Mall Analysis](Resources/Shopping%20Mall%20Analysis.png)  
+
+- Examines the performance of various shopping malls based on size, store count, and construction year.  
+- **Key Insights:**  
+  - Malls with larger areas and more stores yield higher revenue.  
+  - Recently constructed malls show better performance due to modern amenities.
+
+---
+
+## **4. Sales and Payment Analysis**  
+![Sales and Payment Analysis](Resources/Sales%20and%20Payment%20Analysis.png)  
+
+- Focuses on total sales volume, sales by time period, and preferred payment methods.  
+- **Key Insights:**  
+  - **Sales Volume:** Peaks during holiday seasons and end-of-season sales.  
+  - **Payment Method:** Credit cards and digital payments are preferred over cash.  
+  - **Average Transaction Value:** Higher for electronics and luxury items.
+
+---
+
+## **5. Category and Quantity Analysis**  
+![Category and Quantity Analysis](Resources/Category%20and%20Quantity%20Analysis.png)  
+
+- Highlights the performance of different product categories and purchase quantities.  
+- **Key Insights:**  
+  - **Top Categories:** Clothing, Electronics, and Accessories lead in sales.  
+  - **Purchase Quantity:** Larger quantities sold during promotional offers.  
+  - **Seasonal Trends:** Festive seasons drive higher category-specific sales.
+
+---
+
+## **6. Data Cleaning and Transformation Process**
+
+### **Cleaning Steps:**
+
+1. **Handling Missing Values:**  
+   - Replaced missing ages with the average age of all customers.  
+   - Defaulted missing payment methods to **"Unknown"**.
+
+2. **Removing Duplicates:**  
+   - Eliminated duplicate records in the **Customers** and **Sales** tables.  
+
+3. **Standardizing Data:**  
+   - Formatted dates to **YYYY-MM-DD**.  
+   - Standardized mall names to uppercase.
+
+4. **Handling Outliers:**  
+   - Removed unrealistic values such as negative prices and ages above 100.
+
+---
+
+### **Transformation Steps:**
+
+1. **Adding Columns:**  
+   - Created a **total_sales** column to reflect the value of each transaction.  
+
+2. **Establishing Relationships:**  
+   - Linked **Customers** and **Sales** tables using **customer_id**.  
+   - Linked **Sales** and **Shopping Malls** tables using **shopping_mall**.
+
+3. **Creating Views:**  
+   - Developed views for **Total Sales per Mall** and **Customer Purchase Summary**.
+
+---
+
+## **7. Process Summary Visualization**  
+![Process Summary](Resources/Sales%20and%20Payment%20Analysis.png)  
+
+- Illustrates the complete journey from raw data to transformed, analysis-ready datasets.  
+- Shows how cleaning and transformation improve the quality and reliability of the final data.
+
+--- 
 
 # **Dashboard Explanation**
 
@@ -123,6 +247,7 @@ The dashboards in the **California Mall Customers Sales Data Analysis** offer de
 The **California Mall Customers Sales Data Analysis** offers valuable insights into customer behavior, sales performance, and shopping mall dynamics. By examining key metrics such as demographic contributions, sales volume, payment methods, and mall characteristics, several important conclusions can be drawn:
 
 ---
+The data cleaning and transformation process in **MySQL** significantly enhanced the dataset's integrity by handling missing values, removing duplicates, and creating meaningful relationships between tables. These efforts provided a strong foundation for reliable sales and customer behavior analysis. 
 
 ## **Key Findings:**
 
