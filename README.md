@@ -74,50 +74,12 @@ Before importing, ensure that the datasets are properly structured and free from
 
 ---
 
-## **2. Setting Up the MySQL Database**  
-Create a dedicated database to store the imported datasets. This helps organize tables logically.  
+## **2. Setting Up the MySQL Database** 
+## **3. Creating Tables in MySQL**
+## **4. Importing Data into MySQL Tables**  
+## **4. Execute the import process** 
+## **5. Finalizing the Import Process** 
 
-```sql
-CREATE DATABASE california_mall;
-USE california_mall;
-Creating Tables in MySQL
-Design the structure of tables based on the dataset schema. Define appropriate data types and constraints (e.g., PRIMARY KEY, NOT NULL, FOREIGN KEY).
-
-Example – Creating a Customers Table:
-sql
-Copy
-Edit
-CREATE TABLE customers (
-    customer_id VARCHAR(20) PRIMARY KEY,
-    gender ENUM('Male', 'Female') NOT NULL,
-    age INT CHECK (age >= 0),
-    payment_method VARCHAR(50)
-);
-Define Primary Key: To uniquely identify records.
-
-Set Data Constraints: To avoid invalid entries (e.g., CHECK constraints on age).
-
-Set Data Types: INT for numbers, VARCHAR for text, DATE for dates.
-4. Importing Data into MySQL Tables
-Use MySQL Workbench or SQL Queries to import data from external files.
-
-Method 1: Using MySQL Workbench
-Right-click on the table and select "Table Data Import Wizard."
-
-Browse and select the CSV or Excel file.
-
-Map Columns to ensure data aligns with the table structure.
-
-Execute the import process.
-
-Finalizing the Import Process
-After resolving import issues:
-
-Ensure all tables are properly linked through Foreign Keys.
-
-Backup the cleaned and final dataset for future use.
-
-Export cleaned datasets if needed for further analysis in Power BI or other tools.
 ## **Data Cleaning and Transformation Process**
 
 ### **Cleaning Steps:**
@@ -156,6 +118,8 @@ Export cleaned datasets if needed for further analysis in Power BI or other tool
 - Shows how cleaning and transformation improve the quality and reliability of the final data.
 
 --- 
+
+## **5. Exporting Cleaned Data for Power BI**
 
 # **Dashboard Explanation**
 
