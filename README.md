@@ -60,83 +60,7 @@ This document explains the process of importing, cleaning, and transforming the 
 
 ---
 
-## **1. Importing Data into MySQL**
-
-2. Data Cleaning Process
-Step 1: Handle Missing Values
-sql
-Copy
-Edit
--- Replace NULL ages with the average age
-UPDATE customers
-SET age = (SELECT AVG(age) FROM customers)
-WHERE age IS NULL;
-
--- Replace NULL payment methods with 'Unknown'
-UPDATE customers
-SET payment_method = 'Unknown'
-WHERE payment_method IS NULL;
-
-# **Data Cleaning and Transformation Process with Visualization**  
-### **California Mall Customers Sales Data Analysis**
-
-This document outlines the step-by-step process of **Data Cleaning** and **Transformation** using **MySQL**, supported by visualizations that highlight key metrics and insights.
-
----
-
-## **1. Overview of the Dataset**  
-![Overview](Resources/Overview.png)  
-
-- The dataset consists of three tables: **Customers**, **Sales**, and **Shopping Malls**.  
-- Contains information about customer demographics, purchase transactions, and mall characteristics.  
-- Essential for understanding the relationship between customer behavior and sales performance.
-
----
-
-## **2. Contribution of Customers**  
-![Contribution of Customers](Resources/Contribution%20of%20Customers.png)  
-
-- This analysis identifies how different demographics (age, gender, and payment methods) contribute to overall sales.  
-- **Key Insights:**  
-  - **Gender:** Male and female customers show nearly equal participation.  
-  - **Age Groups:** Middle-aged groups contribute the most.  
-  - **Payment Method:** Credit cards dominate the payment landscape.
-
----
-
-## **3. Shopping Mall Analysis**  
-![Shopping Mall Analysis](Resources/Shopping%20Mall%20Analysis.png)  
-
-- Examines the performance of various shopping malls based on size, store count, and construction year.  
-- **Key Insights:**  
-  - Malls with larger areas and more stores yield higher revenue.  
-  - Recently constructed malls show better performance due to modern amenities.
-
----
-
-## **4. Sales and Payment Analysis**  
-![Sales and Payment Analysis](Resources/Sales%20and%20Payment%20Analysis.png)  
-
-- Focuses on total sales volume, sales by time period, and preferred payment methods.  
-- **Key Insights:**  
-  - **Sales Volume:** Peaks during holiday seasons and end-of-season sales.  
-  - **Payment Method:** Credit cards and digital payments are preferred over cash.  
-  - **Average Transaction Value:** Higher for electronics and luxury items.
-
----
-
-## **5. Category and Quantity Analysis**  
-![Category and Quantity Analysis](Resources/Category%20and%20Quantity%20Analysis.png)  
-
-- Highlights the performance of different product categories and purchase quantities.  
-- **Key Insights:**  
-  - **Top Categories:** Clothing, Electronics, and Accessories lead in sales.  
-  - **Purchase Quantity:** Larger quantities sold during promotional offers.  
-  - **Seasonal Trends:** Festive seasons drive higher category-specific sales.
-
----
-
-## **6. Data Cleaning and Transformation Process**
+## **Data Cleaning and Transformation Process**
 
 ### **Cleaning Steps:**
 
@@ -169,10 +93,7 @@ This document outlines the step-by-step process of **Data Cleaning** and **Trans
    - Developed views for **Total Sales per Mall** and **Customer Purchase Summary**.
 
 ---
-
-## **7. Process Summary Visualization**  
-![Process Summary](Resources/Sales%20and%20Payment%20Analysis.png)  
-
+ 
 - Illustrates the complete journey from raw data to transformed, analysis-ready datasets.  
 - Shows how cleaning and transformation improve the quality and reliability of the final data.
 
