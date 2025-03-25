@@ -111,12 +111,7 @@ Before importing, ensure that the datasets are properly structured and free from
 
 3. **Creating Views:**  
    - Developed views for **Total Sales per Mall** and **Customer Purchase Summary**.
-
----
- 
-- Illustrates the complete journey from raw data to transformed, analysis-ready datasets.  
-- Shows how cleaning and transformation improve the quality and reliability of the final data.
-
+     
 --- 
 
 ## **5. Exporting Cleaned Data for Power BI**
